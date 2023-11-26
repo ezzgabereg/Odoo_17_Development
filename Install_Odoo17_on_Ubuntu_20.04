@@ -1,0 +1,24 @@
+# **Packaged installers**
+
+### Prepare <br>
+**Odoo needs a [PostgreSQL](https://www.postgresql.org/) server to run properly.** <br><br>
+The default configuration for the Odoo ‘deb’ package is to use the PostgreSQL server on the same host as the Odoo instance. Execute the following command to install the PostgreSQL server:<br>
+`$ sudo apt install postgresql -y`<br><br>
+
+### Repository <br>
+**Odoo S.A. provides a repository that can be used to install the Community edition by executing the following commands:**<br><br>
+`$ wget -q -O - https://nightly.odoo.com/odoo.key | sudo gpg --dearmor -o /usr/share/keyrings/odoo-archive-keyring.gpg`<br>
+
+`$ echo 'deb [signed-by=/usr/share/keyrings/odoo-archive-keyring.gpg] https://nightly.odoo.com/17.0/nightly/deb/ ./' | sudo tee /etc/apt/sources.list.d/odoo.list`<br><br>
+`$ sudo apt-get update && sudo apt-get install odoo`<br><br>
+Use the usual apt-get upgrade command to keep the installation up-to-date.<br><br>
+
+# Distribution package <br><br>
+### Instead of using the repository, packages for both the Community and Enterprise editions can be downloaded from the [Odoo download page](https://www.odoo.com/page/download).<br><br>
+
+**Once downloaded, execute the following commands as root to install Odoo as a service, create the necessary PostgreSQL user, and automatically start the server:**<br><br>
+
+`# dpkg -i <path_to_installation_package>` _# this probably fails with missing dependencies_ <br><br>
+`# apt-get install -f` _# should install the missing dependencies_ <br><br>
+`# dpkg -i <path_to_installation_package>`
+
