@@ -8,7 +8,7 @@ sudo apt install git
 
 03: Install Python 3
 sudo apt install python3.10-distutils
-python3 --version
+python3 --version 
 
 04: Install postgresql database
 sudo apt install postgresql postgresql-client
