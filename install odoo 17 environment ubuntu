@@ -1,3 +1,8 @@
-#install odoo 17 environment ubuntu
+install odoo 17 environment ubuntu
 ----------------------------------
 01: Update & upgrade Ubuntu Server
+sudo apt-get update && sudo apt-get upgrade
+
+02: Install Git
+sudo apt install git
+
