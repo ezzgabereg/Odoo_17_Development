@@ -34,3 +34,4 @@ sudo apt install python3-pip libldap2-dev libpq-dev libsasl2-dev
 python3.10 -m pip install -r requirements.txt
 
 08: Setup odoo config.file >> /home/ezzgaber/odoo/odoo17/debian
+nano odoo.conf
