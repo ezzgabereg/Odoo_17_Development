@@ -6,3 +6,28 @@ sudo apt-get update && sudo apt-get upgrade
 02: Install Git
 sudo apt install git
 
+03: Install Python 3
+sudo apt install python3.10-distutils
+python3 --version
+
+04: Install postgresql database
+sudo apt install postgresql postgresql-client
+
+05: Create User in postgresql database
+sudo su - postgres -c "createuser -s odoo17"
+sudo su postgres
+psql
+ALTER ROLE odoo17 WITH PASSWORD 'odoo17;
+CTRL + Z >> Exit >> Exit
+
+06: Install Odoo
+  01: Create Directory for name odoo
+  /home/ezzgaber/odoo
+  02: Download odoo sorce
+  git clone https://www.github.com/odoo/odoo --depth 1 --branch 17.0 odoo17
+
+07: Install Python3.10 on This Path >> /home/ezzgaber/odoo/odoo17
+sudo apt install python3.10-venv
+python3.10 -m venv venv
+source venv/bin/activate
+sudo apt install python3-pip libldap2-dev libpq-dev libsasl2-dev
