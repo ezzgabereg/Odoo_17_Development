@@ -1,0 +1,18 @@
+How to fix don't show footer on some pages in report pdf odoo 17 in Ubuntu 22.04.5 LTS
+--------------------------------------------------------------------------------------
+If you installed WKHTMLTOPDF via the APT Repository in Ubuntu 22.04 then you will have 0.12.6, but not the correct patched version.
+You will need to install the patched version.
+
+#update server and make sure wget is installed
+sudo apt update
+sudo apt install wget
+
+#download the patched version of wkhtmltopdf
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+
+#install, which will likely error out
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+#run the below to fix errors
+sudo apt-get install -f
+#re-run dpkg to finish the install
+sudo dpkg -i wkhtmltox_0.12.6.1-2.jammy_amd64.deb
