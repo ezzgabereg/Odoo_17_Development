@@ -2,7 +2,7 @@ install odoo 17 environment ubuntu
 ----------------------------------
 01: Update & upgrade Ubuntu Server
 sudo apt-get update && sudo apt-get upgrade
-.
+
 02: Install Git
 sudo apt install git
 
@@ -17,7 +17,7 @@ sudo apt install postgresql postgresql-client
 sudo su - postgres -c "createuser -s odoo17"
 sudo su postgres
 psql
-ALTER ROLE odoo17 WITH PASSWORD 'odoo17;
+ALTER ROLE odoo17 WITH PASSWORD 'odoo17';
 CTRL + Z >> Exit >> Exit
 
 06: Install Odoo
@@ -31,7 +31,10 @@ sudo apt install python3.10-venv
 python3.10 -m venv venv
 source venv/bin/activate
 sudo apt install python3-pip libldap2-dev libpq-dev libsasl2-dev
-python3.10 -m pip install -r requirements.txt
+python3.10 -m pip install -r requirements.txt >> Time in vedio 11:22
 
 08: Setup odoo config.file >> /home/ezzgaber/odoo/odoo17/debian
 nano odoo.conf
+  
+09: Instll Python  to odoo conf >> odoo/odoo17
+python3.10 odoo-bin -c debian/odoo.conf -d odoo17db
