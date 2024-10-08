@@ -14,10 +14,10 @@ python3 --version
 sudo apt install postgresql postgresql-client
 
 05: Create User in postgresql database
-sudo su - postgres -c "createuser -s odoo17"
+sudo su - postgres -c "createuser -s ezzgaber"
 sudo su postgres
 psql
-ALTER ROLE odoo17 WITH PASSWORD 'odoo17';
+ALTER ROLE ezzgaber WITH PASSWORD 'Ezz@995511';
 CTRL + Z >> Exit >> Exit
 
 06: Install Odoo
@@ -37,4 +37,9 @@ python3.10 -m pip install -r requirements.txt >> Time in vedio 11:22
 nano odoo.conf
   
 09: Instll Python  to odoo conf >> odoo/odoo17
-python3.10 odoo-bin -c debian/odoo.conf -d odoo17db
+python3.10 odoo-bin -c debian/odoo.conf -d ezzgaberdb >> prpblim
+sudo apt install plocate
+locate pg_hba.conf
+
+More..
+
