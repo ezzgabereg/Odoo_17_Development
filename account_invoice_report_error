@@ -1,0 +1,17 @@
+حل مشكلة عدم تنزيل الفاتورة من السستم
+----------------------------------
+سوف ندخل على ملف الفاتورة في السستم
+nano /opt/odoo17/odoo17/addons/account/report/account_invoice_report.py
+
+ثم نعدل هذا السطر
+new_code_url = invoice._generate_qr_code(silent_errors=data['report_type'] == 'html')
+
+إلى هذا السطر
+new_code_url = invoice._generate_qr_code()
+
+ثم نمنح الملف الصلاحية للوصول
+sudo chmod 644 /opt/odoo17/odoo17/addons/account/report/account_invoice_report.py
+
+ثم نسوي ريستارت
+
+sudo systemctl restart odoo17.service
