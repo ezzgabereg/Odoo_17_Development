@@ -1,6 +1,8 @@
 حل مشكلة عدم ظهور الرمز السريع
 ---------------------------------
 
+Nilofrabyan_Industrial
+
 تحديث وترقية
 sudo apt-get update
 sudo apt-get upgrade
@@ -8,7 +10,11 @@ sudo apt-get upgrade
 ---------------------------
 cat /etc/odoo17.conf
 
+tail -f /var/log/odoo17/odoo17.log
+
 tail -n 100 /var/log/odoo17/odoo17.log
+
+tail -f /var/log/odoo17/odoo17.log
 
 cd /opt/odoo17/
 
@@ -20,17 +26,26 @@ cd filestore/
 
 ls
 
+systemctl status odoo17
+
+cat /etc/systemd/system/odoo17.service
+
 su odoo17
-
-sudo apt install libcairo2-dev pkg-config python3-dev
-
-systemctl restart odoo17
 
 tail -f /var/log/odoo17/odoo17.log
 
+sudo apt install libcairo2-dev pkg-config python3-dev
+
 cd /opt/
 
+tar czvf odoo17-Nilofrabyan_Industrial-addons-backup.tar.gz odoo17/
+
 du -sh *
+
+vm odoo17-Nilofrabyan_Industrial-addons-backup.tar.gz /root/backup-14-02-2025
+
+systemctl restart odoo17
+
 
 
 
