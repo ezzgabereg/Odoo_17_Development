@@ -1,0 +1,36 @@
+حل مشكلة عدم ظهور الرمز السريع
+---------------------------------
+
+تحديث وترقية
+sudo apt-get update
+sudo apt-get upgrade
+
+---------------------------
+cat /etc/odoo17.conf
+
+tail -n 100 /var/log/odoo17/odoo17.log
+
+cd /opt/odoo17/
+
+cd .local/share/Odoo/
+
+ls
+
+cd filestore/
+
+ls
+
+su odoo17
+
+sudo apt install libcairo2-dev pkg-config python3-dev
+
+systemctl restart odoo17
+
+tail -f /var/log/odoo17/odoo17.log
+
+cd /opt/
+
+du -sh *
+
+
+
